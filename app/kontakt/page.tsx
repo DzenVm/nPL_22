@@ -1,0 +1,3 @@
+import type { Metadata } from 'next';
+export const metadata: Metadata = { title: 'Kontakt | Gra o podwodnej ekspedycji', robots: { index: false, follow: true } };
+export default function Contact(){return <main className="legal"><a className="back" href="/">← Wróć do strony głównej</a><p className="eyebrow">KONTAKT</p><h1>Masz pytanie?</h1><p className="legal-lede">Napisz, jeśli chcesz uzyskać więcej informacji o stronie albo zgłosić uwagę techniczną.</p><a className="contact-link" href="mailto:kontakt@twoja-domena.pl">kontakt@twoja-domena.pl</a><p className="contact-note">Adres zostanie zastąpiony adresem w Twojej domenie przed publikacją.</p></main>}
