@@ -4,9 +4,9 @@ import './globals.css';
 export const metadata: Metadata = {
   title: 'Gra o podwodnej ekspedycji',
   description: 'Spokojna, współpracująca gra przeglądarkowa o odbudowie podwodnego archipelagu.',
-  metadataBase: new URL('https://twoja-domena.pl'),
+  metadataBase: new URL('https://ukdabonum.pro'),
   alternates: { canonical: '/' },
-  openGraph: { title: 'Gra o podwodnej ekspedycji', description: 'Odkrywaj, odbudowuj i planuj wspólnie pod powierzchnią.', locale: 'pl_PL', type: 'website' },
+  openGraph: { title: 'Gra o podwodnej ekspedycji', description: 'Odkrywaj, odbudowuj i planuj wspólnie pod powierzchnią.', url: '/', siteName: 'ukdabonum.pro', locale: 'pl_PL', type: 'website' },
   robots: { index: true, follow: true }
 };
 
