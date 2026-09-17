@@ -26,6 +26,17 @@ async function collectFiles(directory) {
   return files;
 }
 
+async function collectFilesIfPresent(directory) {
+  try {
+    return await collectFiles(directory);
+  } catch (error) {
+    if (error && typeof error === "object" && "code" in error && error.code === "ENOENT") {
+      return [];
+    }
+    throw error;
+  }
+}
+
 const files = await collectFiles(root);
 const corpus = (
   await Promise.all(files.map(async (file) => `${file}\n${await readFile(file, "utf8")}`))
@@ -44,7 +55,7 @@ const clientDirectories = ["app", "components", "public"].map((directory) =>
   path.join(root, directory),
 );
 const clientFiles = (
-  await Promise.all(clientDirectories.map((directory) => collectFiles(directory)))
+  await Promise.all(clientDirectories.map((directory) => collectFilesIfPresent(directory)))
 ).flat();
 const clientCorpus = (
   await Promise.all(
